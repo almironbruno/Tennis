@@ -1,6 +1,5 @@
 package bruno.tennis;
 
-import bruno.tennis.Player;
 import java.util.InputMismatchException;
 import java.util.Scanner;
 
@@ -14,6 +13,7 @@ import java.util.Scanner;
 public class Tennis {
     /**
      * Main method
+     * @param args
      */
     public static void main(String[] args) {
         
@@ -23,29 +23,26 @@ public class Tennis {
         System.out.print("Name:");
         String tournamentName = sc.nextLine();
         int setsCount=validateSetsCount(sc);
-        System.out.println(setsCount);
         System.out.println(" - First Player -");
         System.out.print("Name:");
         String player1Name = String.format("%1$6s",sc.next());
-        System.out.print("Winning probability:");
         int probP1= validateFirstPlayerWinProb(sc);
         System.out.println(" - Second Player -");
         System.out.print("Name:");
         String player2Name = String.format("%1$6s",sc.next());
-        System.out.print("Winning probability:");
         int probP2= validateSecondPlayerWinProb(sc,probP1);
         
         Player p1= new Player(player1Name,probP1);
         Player p2= new Player(player2Name,probP2);
 
-        //Match match=new Match(tournamentName,setsCount,p1,p2);
-        //match.startMatch();
+        Match match=new Match(tournamentName,setsCount,p1,p2);
+        match.startMatch();
         
         if(askRematch(sc)){
-           // match.startMatch();
-        }else {
-            System.out.println(" - End of program -");
+            match.startMatch();
         }
+        System.out.println(" - End of program -");
+        
     }
     
     /**
