@@ -53,7 +53,7 @@ public class Tennis {
         do {
             System.out.print("Winning probability (0-100):");
             while (!sc.hasNextInt()) {
-                System.out.print("Enter a valid number (0-100)ª:");
+                System.out.print("Enter a valid number (0-100):");
                 try{sc.next();
                 }catch(InputMismatchException ex){}
                 
@@ -73,7 +73,7 @@ public class Tennis {
         do{
             System.out.print("Winning probability ("+(100-firstProb)+"):");
             while (!sc.hasNextInt()) {
-                System.out.println("Must enter ("+(100-firstProb)+"):");
+                System.out.print("Must enter ("+(100-firstProb)+"):");
                 sc.next();
             }
             num=validarInput(sc);
